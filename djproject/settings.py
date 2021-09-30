@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-g1^*+#6y6c$8l1=pnu3j&2sw9@1$td4-_xw(4j&eb7ha-w25r^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['blood-bank--app.herokuapp.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -42,7 +42,6 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -123,9 +122,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-#STATICFILES_DIRS = [
-#    os.path.join(BASE_DIR,'static')
-#]
+STATICFILES_DIRS = [
+     os.path.join(BASE_DIR,'static')
+]
 STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 
 # Default primary key field type

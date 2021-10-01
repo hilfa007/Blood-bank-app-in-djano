@@ -235,7 +235,7 @@ table.dataTable {
             <td>  
               <a href="#">  
                 <div class="d-flex align-items-center">  
-                  <div class="avatar avatar-blue mr-3">EB</div>  
+                  <div class="avatar avatar-blue mr-3"></div>  
   
                   <div class="" style="font-family: 'Times New Roman', Times, serif;">  
                     <p class="font-weight-bold mb-0">{{user.name}}</p>    
@@ -249,7 +249,7 @@ table.dataTable {
             <td>{{user.unit}}</td>
             <td>{{user.date_of_donation}}</td>
             <td>  
-              <div class="badge badge-success badge-success-alt"></div>  
+             <div class="badge badge-success badge-success-alt"> status</div>
             </td>  
             <td>  
               <div class="dropdown">  
@@ -296,8 +296,8 @@ $(document).ready(function() {
   $(".dataTables_filter input")  
     .attr("placeholder", "Search here...")  
     .css({  
-      width: "300px",  
-      display: "inline-block"  
+      width: "350px",  
+      display: "inline-block"
     });  
   $('[data-toggle="tooltip"]').tooltip();  
 });  

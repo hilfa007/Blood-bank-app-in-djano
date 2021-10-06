@@ -1,28 +1,24 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from django.contrib.auth.models import User,auth
-from django.contrib.auth import authenticate,login
+from django.contrib.auth import authenticate
 from django.contrib import messages
 from .models import Userinfo
 from django.http import JsonResponse
 
 
-def formView(request):
-   if request.session.get('username'):
-      username = request.session['username']
-      return redirect(display)
-   else:
-      return render(request, 'login.html')
 
 def user_login(request):
- 
-    if request.method == 'POST':
+    user = request.session.get('username')
+    if request.method == "POST":
         username  = request.POST['username']
-        password = request.POST['password']
+        password  = request.POST['password']
         
         user = auth.authenticate(username = username,password = password)
         if user is not None:
-            request.session['username'] = username
+            request.session['id'] = user.id
+            request.session['username'] = user.username
+
             return JsonResponse(
                 {'success':True},
                 safe=False
@@ -32,13 +28,15 @@ def user_login(request):
                 {'success':False},
                 safe=False
             )
-
-    return render(request,'login.html')
+    elif(user):
+        return redirect('/display')
+    else:
+        return render(request,"login.html",{'user':user})
 
 
 def signup(request):
-
-        if request.method == 'POST':
+        user=request.session.get('username')
+        if request.method == "POST":
             first_name  = request.POST['first_name']
             last_name   = request.POST['last_name']
             username    = request.POST['username']
@@ -46,38 +44,41 @@ def signup(request):
             password_1  = request.POST['password1']
             password_2  = request.POST['password2']
 
-            if password_1 == password_2:
-                if User.objects.filter(username=username).exists():
+            if (password_1 == password_2):
+                if User.objects.filter(username=username):
                     messages.info(request,'Username taken')
-                    return redirect(signup)
-                elif User.objects.filter(email=email_id).exists():
+                    return redirect('/signup')
+                elif User.objects.filter(email=email_id):
                    messages.info(request,'Email taken')
-                   return redirect(signup)
+                   return redirect('/signup')
                 else:
-                   user = User.objects.create_user(username=username,password=password_1,email=email_id,first_name=first_name,last_name=last_name)
-                   user.save();
-                   return redirect(user_login)
+                   users = User.objects.create_user(username=username,password=password_1,email=email_id,first_name=first_name,last_name=last_name)
+                   users.save()
+                   return redirect('/')
                
             else:
                 messages.info(request,'password not matching')
                 return redirect(user_login)
             return redirect(signup)
+        elif(user):
+            return redirect('/display')
         else:
-            return render(request,'signup.html')
+            return render(request,'signup.html',{'user':user})
 
 
-def display(request):   
-    if request.session.get('username'):
-        username = request.session['username']
-        users = Userinfo.objects.all()
-        return render(request,'display.html',{'login':True,'username':username,'users':users})
+def display(request):
+    user = request.session.get('username')   
+    if(user):
+        
+        data = Userinfo.objects.all()
+        return render(request,"display.html",{'data':data,'user':user})
     else:
-        return redirect(login)
+        return redirect("/")
 
 
 def add_donor(request):
-    if request.session.get('username'):
-        username = request.session['username'] 
+         
+        user=request.session.get('username')
         if request.method == 'POST':
             name = (request.POST['name'])
             blood_group = (request.POST['blood_group'])
@@ -88,18 +89,21 @@ def add_donor(request):
             users = Userinfo.objects.create(name=name,blood_group=blood_group,phone_number=phone,place=place)
             return redirect(display)
 
+        elif(user):
+            user=request.session.get('username')
+            return render(request,'add_donor.html',{'user':user})
         else:
-            return render(request,'add_donor.html',{'login':True,'username':username})
-    else:
-        return redirect(login)
+            return redirect("/")
 
 
 def logout(request):
     try:
         del request.session['username']
-        return redirect(formView)
+        del request.session['id']
+        
     except:
         pass
+    return redirect(user_login)
 
 
 

@@ -17,7 +17,7 @@
 body {  
   min-height: 100vh;  
  background-color: #FFE53B;  
-  background-image: linear-gradient( #FFE53B 0%, #FF2525 100%);  
+  background-image: linear-gradient(147deg, #FFE53B 0%, #FF2525 100%);  
 }  
 .table {  
   border-spacing: 0 0.85rem !important;  
@@ -193,26 +193,22 @@ table.dataTable {
     }  
 </style>  
 <body>  
-   <div class="row">
 
-  <div class="col-12 col-lg-12 col-md-12 pt-5">
-    <div class="pt-5 text-left ">
-    
+    <h1 class="text-center text-danger p-3" style="font-family: 'Times New Roman', Times, serif;">Donour Registration Form</h1>
+    <div class="row col-12">
       <form action="add-donor" method='post'>
         {% csrf_token %}
-        <div class="text-center " style="font-family: 'Times New Roman', Times, serif;">
-            <p class="p-5  text-right"><strong>
-              
-               FULL NAME    <input type="text" name="name"><br><br>
+        <div class="text-center" style="font-family: 'Times New Roman', Times, serif;">
+            <p class="p-5 text-right"><strong>
+               NAME         <input type="text" name="name"><br><br>
                BLOOD GROUP  <input type="text" name="blood_group"><br><br>
-               PHONE NO     <input type="text" name="phone_no"><br><br>
+               PHONE NO     <input type="number" name="phone_no"><br><br>
                PLACE        <input type="text" name="place"><br><br></strong>
               <button class=" bg-danger text-center text-white">add</button></p>
         </div>
       </form>
     </div>
-    </div>
-  </div>
+  
 <script>  
 $(document).ready(function() {  
   $("#example").DataTable({  

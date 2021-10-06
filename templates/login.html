@@ -2,8 +2,13 @@
 <html>
     <head>
         <title>login</title>
-        <link href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
-   
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> </script>  
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"> </script>  
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"> </script>  
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">   
+        <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"> </script>  
+         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" > 
   
     <style>
  
@@ -19,9 +24,8 @@
                  <img src="https://financialtribune.com/sites/default/files/field/image/17january/12_blood_2.png" alt="" >
                 </div>
 
-
-           
-            <div class="col-12 col-lg-6 col-md-6  p-5">
+            <div class="col-12 col-md-6 p-5 bg-dark">
+            <div class="col-12 col-lg-6 col-md-6  ">
                
                 <div class=""><br><br>
                    <h1 class="text-danger" style=""><strong> LOGIN HERE</strong></h1>
@@ -32,11 +36,11 @@
                         <form action="" method='post' id="login_form">
                             {% csrf_token %}
                             <div class="">
-                                <label class="">Uername</label>
+                                <label class="text-white">Uername</label>
                                 <input type="text" class="form-control" name="username" id="username">
                             </div>
                             <div class="">
-                                <label class="">Password</label>
+                                <label class="text-white">Password</label>
                                 <input type="password" class="form-control" name="password" id="password">
                             </div>
  
@@ -51,6 +55,8 @@
                         </form>                    
                     </div>                 
                 </div>
+            </div>
+           
             </div>
         </div>
     </div>

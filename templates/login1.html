@@ -1,118 +1,224 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<html>
+    <head>
+        <title>login</title>
+        <link href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <style>
-         /* Bordered form */
-form {
-    border: 3px solid #f1f1f1;
-  }
-  
-  /* Full-width inputs */
-  input[type=text], input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-  }
-  
-  /* Set a style for all buttons */
-  button {
-    background-color: #04AA6D;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-  }
-  
-  /* Add a hover effect for buttons */
-  button:hover {
-    opacity: 0.8;
-  }
-  
-  /* Extra style for the cancel button (red) */
-  .cancelbtn {
-    width: auto;
-    padding: 10px 18px;
-    background-color: #f44336;
-  }
-  
-  /* Center the avatar image inside this container */
-  .imgcontainer {
-    text-align: center;
-    margin: 24px 0 12px 0;
-  }
-  
-  /* Avatar image */
-  img.avatar {
-    width: 40%;
-    border-radius: 50%;
-  }
-  
-  /* Add padding to containers */
-  .container {
-    padding: 16px;
-  }
-  
-  /* The "Forgot password" text */
-  span.psw {
-    float: right;
-    padding-top: 16px;
-  }
-  
-  /* Change styles for span and cancel button on extra small screens */
-  @media screen and (max-width: 300px) {
-    span.psw {
-      display: block;
-      float: none;
-    }
-    .cancelbtn {
-      width: 100%;
-    }
-  }
-    </style>
-    
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-</head>
-<body>
-   <div class="row col-12 col-md-6">
-       <div class="col-12 col-md-6">
-        <img src="https://financialtribune.com/sites/default/files/field/image/17january/12_blood_2.png" alt="" style="height:400px;width:300px;" >
-       </div>
-
-
-       <div class="col-12 col-md-6" >
-    <form action="action_page.php" method="post">
-      
-        <div class="">
-          <label for="uname"><b>Username</b></label>
-          <input type="text" class="" name="username" id="username" required>
-      
-          <label for="psw"><b>Password</b></label>
-          <input type="password" class="" name="password" id="password" required>
-      
-          <button type="submit">Login</button>
-          <label>
-            <input type="checkbox" checked="checked" name="remember"> Remember me
-          </label>
-        </div>
-      
-        <div class="container" style="background-color:#f1f1f1">
-          <button type="button" class="cancelbtn">Cancel</button>
+        body {
+            background-color: #ffffff;  
+  background-image: linear-gradient( #fc8e28 100%);
+            font-family: 'Roboto', sans-serif;
+        }
          
+        .login-box {
+            margin-top: 75px;
+            height: auto;
+            background: #e63b3b;
+            text-align: center;
+            box-shadow: 0 13px 16px rgba(2, 56, 53, 0.16), 0 13px 16px rgba(10, 70, 60, 0.23);
+        }
+         
+        .login-key {
+            height: 100px;
+            font-size: 80px;
+            line-height: 100px;
+            background: -webkit-linear-gradient(#27EF9F, #0DB8DE);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+         
+        .login-title {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 30px;
+            letter-spacing: 2px;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #ECF0F5;
+        }
+         
+        .login-form {
+            margin-top: 25px;
+            text-align: left;
+        }
+         
+        input[type=text] {
+            background-color: #fcf9fb;
+            border: none;
+            border-bottom: 2px solid #0DB8DE;
+            border-top: 0px;
+            border-radius: 0px;
+            font-weight: bold;
+            outline: 0;
+            margin-bottom: 20px;
+            padding-left: 0px;
+            background-color: #faf6f8;
+            color: #084646;
+        }
+         
+        input[type=password] {
+            background-color: #feffff;
+            border: none;
+            border-bottom: 2px solid #0DB8DE;
+            border-top: 0px;
+            border-radius: 0px;
+            font-weight: bold;
+            outline: 0;
+            padding-left: 0px;
+            margin-bottom: 20px;
+            color: #084646;
+        }
+         
+        .form-group {
+            margin-bottom: 40px;
+            outline: 0px;
+        }
+         
+        .form-control:focus {
+            border-color: inherit;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            border-bottom: 2px solid #0DB8DE;
+            outline: 0;
+            background-color: #70ccfa;
+            color: #084646;
+        }
+         
+        input:focus {
+            outline: none;
+            box-shadow: 0 0 0;
+        }
+         
+        label {
+            margin-bottom: 0px;
+        }
+         
+        .form-control-label {
+            font-size: 10px;
+            color: #ffffff;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+         
+        .btn-outline-primary {
+            border-color: #0DB8DE;
+            color: #0DB8DE;
+            border-radius: 0px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        }
+         
+        .btn-outline-primary:hover {
+            background-color: #0DB8DE;
+            right: 0px;
+        }
+         
+        .login-btm {
+            float: left;
+        }
+         
+        .login-button {
+            padding-right: 0px;
+            text-align: right;
+            margin-bottom: 25px;
+        }
+         
+        .login-text {
+            text-align: left;
+            padding-left: 0px;
+            color: #e0f0f0;
+        }
+         
+        .loginbttm {
+            padding: 0px;
+        }
+        </style>
+    </head>
+    
+<body>
+<div class="container">
+        <div class="row">
+
+                <div class="col-12 col-md-6 pt-5 ">
+                 <img src="https://financialtribune.com/sites/default/files/field/image/17january/12_blood_2.png" alt="" >
+                </div>
+
+
+           
+            <div class="col-12 col-lg-6 col-md-6 login-box p-5">
+                <div class="col-lg-12 login-key">
+                    <i class="fa fa-key" aria-hidden="true"></i>
+                </div>
+                <div class="col-lg-12 login-title">
+                    LOGIN HERE
+                </div>
+ 
+                <div class="col-lg-12 ">
+                    <div class="col-lg-12 ">
+                        <form action="" method='post' id="login_form">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label class="form-control-label">USERNAME</label>
+                                <input type="text" class="form-control" name="username" id="username">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-control-label">PASSWORD</label>
+                                <input type="password" class="form-control" name="password" id="password">
+                            </div>
+ 
+                           
+                                
+                                <div class=" ">
+                                    <button type="button" id='btn1' class="btn btn-primary">Login</button>
+                                    <a href="signup" class="">Signup</a><br>
+                                    <span id="span_error" style="color:rgb(65, 9, 9);"></span>
+                                </div>
+                            </div>
+                        </form>                    
+                    </div>                 
+                </div>
+            </div>
         </div>
-      </form>
-      </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-</body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>  
+        <script> 
+                $('#btn1').click(() =>{
+                    var username = $('#username').val()
+                    var password = $('#password').val()
+                    console.log(username,password)
+                    var data = {
+                        'csrfmiddlewaretoken':'{{csrf_token}}',
+                        'username':username,
+                        'password':password
+                    }
+                    if(username == ''){
+                        $('#span_error').html('enter valid username')
+                    }else if(password == ''){
+                        $('#span_error').html('enter valid password')
+                    }else{
+                        $.ajax({
+                            url:'/',
+                            method:'POST',
+                            data: data,
+                            dataType:'json',
+                            success:function(data){
+                                if(data.success){
+                                    alert('user logged in')
+                                    window.location.replace('/display')
+                                }else{
+                                    $('#span_error').html('invalid credentials')
+                                }
+                            }
+                        })
+                    }
+                })
+        </script>
+     
+    </body>
 </html>

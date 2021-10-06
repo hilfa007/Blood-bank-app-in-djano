@@ -198,15 +198,15 @@ table.dataTable {
     <div class="row col-12">
       <form action="signup" method='post'>
         {% csrf_token %}
-        <h1 class="text-center pl-5 pt-3 text-danger" style="font-family: 'Times New Roman', Times, serif;">Create account here</h1>
+        <h1 class="text-center pl-5 pt-3 text-danger" style="font-family: 'Times New Roman', Times, serif;"><strong>Create account here</strong></h1>
         <div class="text-center" style="font-family: 'Times New Roman', Times, serif;">
             <p class="p-5 text-right"><strong>
-               FIRST NAME         <input type="text" name="first_name"><br><br>
-               LAST NAME         <input type="text" name="last_name"><br><br>
-               USER NAME         <input type="text" name="username"><br><br>
-               EMAIL        <input type="email" name="email"><br><br>
-               PASSWORD      <input type="password" name="password1"><br><br>
-               CONFIRM PASSWORD      <input type="password" name="password2"><br><br></strong>
+               <input type="text" name="first_name" placeholder="first name..."><br><br>
+               <input type="text" name="last_name" placeholder="last name..."><br><br>
+               <input type="text" name="username" placeholder="username..."><br><br>
+               <input type="email" name="email" placeholder="email..."><br><br>
+               <input type="password" name="password1" placeholder="password..."><br><br>
+               <input type="password" name="password2" placeholder="confirm password..."><br><br></strong>
               <a href=""><button class=" bg-danger text-center text-white">SIGNUP</button></a></p>
               
               

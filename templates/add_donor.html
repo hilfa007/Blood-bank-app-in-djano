@@ -17,7 +17,7 @@
 body {  
   min-height: 100vh;  
  background-color: #FFE53B;  
-  background-image: linear-gradient(147deg, #FFE53B 0%, #FF2525 100%);  
+  background-image: linear-gradient( #FFE53B 0%, #FF2525 100%);  
 }  
 .table {  
   border-spacing: 0 0.85rem !important;  
@@ -193,24 +193,29 @@ table.dataTable {
     }  
 </style>  
 <body>  
-
-    <h1 class="text-center text-danger p-3" style="font-family: 'Times New Roman', Times, serif;">Donour Registration Form</h1>
-    <div class="row col-12">
+   <div class="row pl-5 ">
+    <div class="col-12 col-md-4 pt-3 ">
+      <img src="https://th.bing.com/th/id/R.251d23f56d2970adf5e6ffffd5d3dcbd?rik=DFMHnV%2bkFA6IlA&riu=http%3a%2f%2fopenclipart.org%2fimage%2f800px%2fsvg_to_png%2f154351%2fblood_clipart.png&ehk=FT8yDlkl2d4sDBxN%2faIEGD%2bfuuKE2XJui35pHIClH2M%3d&risl=&pid=ImgRaw&r=0.png" alt="" style="width:600px;height:600px">
+  </div>
+   
+  <div class="col-12 col-lg-6 col-md-6 pt-5">
+    <div class="pt-5 text-left ">
+    
       <form action="add-donor" method='post'>
         {% csrf_token %}
-        <div class="text-center" style="font-family: 'Times New Roman', Times, serif;">
-            <p class="p-5 text-right"><strong>
-               NAME         <input type="text" name="name"><br><br>
-               AGE          <input type="number" name="age"><br><br>
+        <div class="text-center " style="font-family: 'Times New Roman', Times, serif;">
+            <p class="p-5  text-right"><strong>
+              
+               FULL NAME    <input type="text" name="name"><br><br>
                BLOOD GROUP  <input type="text" name="blood_group"><br><br>
-               PHONE NO     <input type="number" name="phone_no"><br><br>
-               UNIT         <input type="text" name="unit"><br><br>
-               DONATION DATE<input type="date" name="donation_date"><br><br></strong>
+               PHONE NO     <input type="text" name="phone_no"><br><br>
+               PLACE        <input type="text" name="place"><br><br></strong>
               <button class=" bg-danger text-center text-white">add</button></p>
         </div>
       </form>
     </div>
-  
+    </div>
+  </div>
 <script>  
 $(document).ready(function() {  
   $("#example").DataTable({  

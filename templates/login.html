@@ -191,19 +191,19 @@ table.dataTable {
       color: #f66d9b;  
     }  
 </style>  
-<body class="p-5 ">  
+<body class="pl-4">  
 
     <h1 class="text-center text-ehite p-3" style="font-family: 'Times New Roman', Times, serif;"></h1>
-    <div class="row col-12" style="background-color: rgb(177, 39, 39);">
+    <div class="row col-12 p-4" style="background-color: rgb(177, 39, 39);">
       <form action="" method='post' id="login_form">
         {% csrf_token %}
         <div class="text-center text-white  p-5" style="font-family: 'Times New Roman', Times, serif;background-color: rgb(177, 39, 39);">
-            <p class="p-5 text-right"><strong>
+            <p class=" text-right"><strong>
                username        <input type="text" class="text-primary" name="username" id="username"><br><br>
                password       <input type="password" class="text-primary" name="password" id="password"><br><br></strong>
                <button type="button" id='btn1' class="btn btn-danger">Login</button>
                <a href="signup" class="text-white">Signup</a><br>
-               <span id="span_error" style="color:rgb(247, 8, 8);"></span>
+               <span id="span_error" style="color:rgb(255, 233, 233);"></span>
         </div>
       </form>
     </div>

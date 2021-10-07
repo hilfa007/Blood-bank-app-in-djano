@@ -98,12 +98,11 @@ def add_donor(request):
 
 def logout(request):
     try:
-        del request.session['username']
-        del request.session['id']
+        request.session.flush()
         
     except:
         pass
-    return redirect(user_login)
+    return redirect("/")
 
 
 
